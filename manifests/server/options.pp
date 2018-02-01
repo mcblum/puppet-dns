@@ -178,6 +178,7 @@ define dns::server::options (
   $no_empty_zones = false,
   $notify_source = undef,
   $query_log_enable = undef,
+  $response_policy_zones = [],
   $statistic_channel_ip = undef,
   $statistic_channel_port = undef,
   $statistic_channel_allow = undef,
@@ -200,6 +201,7 @@ define dns::server::options (
     fail("The forward_policy must be ${valid_forward_policy}")
   }
   validate_array($forwarders)
+  validate_array($response_policy_zones)
   validate_array($transfers)
   validate_array($listen_on)
   validate_array($listen_on_ipv6)
