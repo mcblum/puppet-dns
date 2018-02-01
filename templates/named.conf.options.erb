@@ -24,12 +24,12 @@ options {
 <% end -%>
 
 <% if @response_policy_zones.size != 0 then -%>
- +    response-policy {
- +    <%- @response_policy_zones.each do |zone| -%>
- +      zone "<%= zone -%>";
- +    <%- end -%>
- +    };
- +<% end -%>
+   response-policy {
+   <%- @response_policy_zones.each do |zone| -%>
+     zone "<%= zone -%>";
+   <%- end -%>
+   };
+ <% end -%>
 
 <% if @forward_policy then -%>
     forward <%= @forward_policy %>;
